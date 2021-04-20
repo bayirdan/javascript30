@@ -1,0 +1,51 @@
+@import '_normalize';
+@import '_root';
+
+
+html {
+  height: 100%;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: wheat;
+}
+
+.container {
+  max-width: 1080px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .keyboard {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      background-color: rgba($color: #000000, $alpha: .3);
+      text-align: center;
+      font-size: 2rem;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      transition: all .05s;
+
+      &:last-child {
+        grid-column: 1/4;
+      } 
+    }
+
+    .clicked {
+      border: 2px solid wheat;
+      box-shadow: 0 3px 20px wheat;
+      padding: 29px;
+    }
+  }
+}

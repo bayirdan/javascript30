@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+}
+
+.images {
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.box {
+  flex: 1;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #333;
+  font-size: 4rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+}
+
+.box p {
+  text-shadow: 3px 3px 3px #333;
+  text-transform: uppercase;
+  transition: transform 0.5s;
+}
+
+p:first-child {
+  transform: translateY(-200%);
+}
+
+p:last-child {
+  transform: translateY(200%);
+}
+
+.box.clicked-active > p:first-child,
+.box.clicked-active > p:last-child {
+  transform: translateY(0);
+}
+
+.box.open {
+  font-size: 8rem;
+  flex: 3;
+}
+
+.box1 {
+  background-image: url("../images/i1.jpg");
+}
+.box2 {
+  background-image: url("../images/i2.jpg");
+}
+.box3 {
+  background-image: url("../images/i3.jpg");
+}
+.box4 {
+  background-image: url("../images/i4.jpg");
+}
+.box5 {
+  background-image: url("../images/i5.jpg");
+}
+
+@media (max-width: 1000px) {
+  p {
+    font-size: 2rem;
+  }
+  .box.open {
+    font-size: 5rem;
+    flex: 2;
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Practice with Console 2</title>
+  </head>
+
+  <body style="text-align: center">
+    <p style="font-size: 30px; margin-top: 100px; letter-spacing: 2px">
+      This is a
+      <span style="font-weight: bold; text-decoration: underline">console</span>
+      practice !
+    </p>
+
+    <script>
+      const employees = [
+        { name: "Berk", salary: 3000 },
+        { name: "Can", salary: 3200 },
+        { name: "Selin", salary: 4000 },
+        { name: "Ece", salary: 2500 },
+        { name: "Adnan", salary: 15500 },
+      ];
+
+      const minWage = 2800;
+
+      // if even one of them follows the rule, returns true
+      const belowMinWage = employees.some((employee) => {
+        return minWage > employee.salary;
+      });
+      console.log(belowMinWage);
+
+      // if they all follow this rule, return true
+      const allAboveMinWage = employees.every((employee) => {
+        return minWage > employee.salary;
+      });
+      console.log(allAboveMinWage);
+
+      const staff = [
+        { name: "Berk", id: 653423 },
+        { name: "Can", id: 713423 },
+        { name: "Selin", id: 3021842 },
+        { name: "Ece", id: 129823 },
+        { name: "Adnan", id: 522328 },
+      ];
+      console.table(staff);
+
+      const personInfo = staff.find((person) => {
+        return person.id === 3021842;
+      });
+      console.log(personInfo);
+
+      const personIndex = staff.findIndex((person) => {
+        return person.id === 3021842;
+      });
+      console.log(`Person Index: ${personIndex}`);
+
+      // Staff firing
+      staff.splice(personIndex, 1);
+      console.log(`Fired Staff: ${personInfo.name}`);
+      console.table(staff);
+
+      // New group
+      const newGroup = [
+        ...staff.slice(0, personIndex - 1),
+        ...staff.slice(personIndex),
+      ];
+      console.table(newGroup);
+    </script>
+  </body>
+</html>

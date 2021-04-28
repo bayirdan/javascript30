@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Some DevTools Tricks</title>
+  </head>
+  <body>
+    <p onclick="change()" style="text-align: center; font-size: 50px">
+      Some Console Tricks!
+    </p>
+
+    <script>
+      const cars = [
+        { name: "Mercedes S350", price: 45_000 },
+        { name: "Audi A5", price: 34_000 },
+      ];
+
+      function change() {
+        const p = document.querySelector("p");
+        p.style.color = "#ff6347";
+        p.style.fontSize = "100px";
+        p.style.transform = "translate(0, 100px)";
+      }
+
+      // Regular
+      console.log("Hello World");
+
+      // Interpolated  --> Can be used for variables
+      console.log("Hello i am a %s", "engineer");
+      console.log("Hello i am a %d", 25);
+      console.log("Hello i am a %o", {
+        name: "Burkay",
+        age: 25,
+      });
+
+      // Styled  --> Can be used for styles
+      console.log(
+        "Can be used for %c styles ",
+        "font-size: 40px; color: tomato; background-color: cyan; text-transform: uppercase; border: 1px solid #000; border-radius: 10px"
+      );
+
+      // Warning  --> Can be used for warning console messages!
+      console.warn("Warning Messages!");
+
+      // Error  --> Can be used for error messages!
+      console.error("Error Messages!!!");
+
+      // Info  --> Can be used for information messages!
+      console.info("The Mona Lisa has no eyebrows");
+
+      // Testing
+      const test = document.querySelector("p");
+      console.assert(
+        test.classList.contains("test-class"),
+        "there is no such class"
+      );
+
+      // Clearing  --> clears the console
+      //console.clear();
+
+      // Viewing DOM-dir  --> Can be used to viewing the properties of the element
+      console.log(test);
+      console.dir(test);
+
+      // Grouping
+      cars.forEach((car) => {
+        console.groupCollapsed(car.name);
+        console.log(`This is my car ${car.name}`);
+        console.log(`${car.name} is ${car.price} €`);
+        console.groupEnd(car.name);
+      });
+
+      // Counting  --> How many times it has been used.
+      console.count("Apple");
+      console.count("Apple");
+      console.count("Microsoft");
+      console.count("Intel");
+      console.count("Apple");
+      console.count("Oracle");
+      console.count("Oracle");
+      console.count("Oracle");
+      console.count("Intel");
+      console.count("Microsoft");
+      console.count("Intel");
+      console.count("Microsoft");
+
+      // Timing
+      console.time("fetching data");
+      fetch("https://api.github.com/users/bayirdan")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("fetching data");
+          console.log(data);
+        });
+
+      // Table
+      console.table(cars);
+    </script>
+  </body>
+</html>

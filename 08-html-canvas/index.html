@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>HTML Canvas</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="box">
+        <label for="sizing">Size: </label>
+        <input type="range" name="sizing" min="1" max="100" value="5" />
+      </div>
+      <div class="box">
+        <label for="brushColor">Color: </label>
+        <input type="color" name="brushColor" value="#333333" />
+      </div>
+    </div>
+    <canvas id="drawing" width="800" height="800"></canvas>
+
+    <script src="assets/script/script.js"></script>
+  </body>
+</html>

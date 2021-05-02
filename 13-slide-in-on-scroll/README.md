@@ -1,5 +1,7 @@
 # 13- Slide in on Scroll
 
+view demos [here](https://bayirdan.github.io/javascript30/13-slide-in-on-scroll/index.html)
+
 ### Debouncing
 
 debunce fonksiyonu, her scrollda tetiklenen eventListener için, performans kaybı yaşanmaması amacıyla kullanılmıştır. Scroll işleminden sonraki 20 ms'lik bir eventListener gecikmesi, hiç kullanılmamasına oranla ciddi bir performans artışı sağlamıştır.

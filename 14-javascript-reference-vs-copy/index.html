@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>JavaScript Reference vs Copy</title>
+  </head>
+  <body style="text-align: center">
+    <p style="font-size: 30px; margin-top: 100px; letter-spacing: 2px">
+      This is a
+      <span style="font-weight: bold; text-decoration: underline">console</span>
+      practice !
+    </p>
+
+    <script>
+      // -- NUMBERS --
+      console.log(
+        "%c- Numbers -",
+        "background-color: #333; color: #fff; font-size: 20px"
+      );
+      let age = 18;
+      let cloneAge = 20;
+      console.log(`age: ${age}, cloneAge: ${cloneAge}`);
+
+      age2 = 25;
+      console.log(`age: ${age}, cloneAge: ${cloneAge}`);
+
+      // -- STRINGS --
+      console.log(
+        "%c- Strings -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+      let name = "Berke";
+      let cloneName = name;
+      console.log(`name: ${name} - cloneName: ${cloneName}`);
+
+      name2 = "Burak";
+      console.log(`name: ${name} - cloneName: ${cloneName}`);
+
+      // -- ARRAYS --
+      console.log(
+        "%c- Arrays -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+
+      console.log("%c- Referenced -", "color: blue");
+      // Referenced
+      let names = ["Selin", "Azra", "Pelin"];
+      let cloneNames = names;
+      console.log(names);
+      console.log(cloneNames);
+
+      cloneNames.push("Su");
+      console.log(names);
+      console.log(cloneNames);
+
+      console.info("%c- Unreferenced -", "color: blue");
+      // Unreferenced
+      let names2 = ["Selin", "Azra", "Pelin"];
+
+      // without ES6:
+      // let cloneNames2 =  Array.from(names2);
+
+      // with ES6:
+      let cloneNames2 = [...names2];
+      console.log(names2);
+      console.log(cloneNames2);
+
+      cloneNames2.push("Su");
+      console.log(names2);
+      console.log(cloneNames2);
+
+      // -- OBJECTS --
+      console.log(
+        "%c- Objects -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+
+      console.log("%c- Referenced -", "color: blue");
+      // Referenced
+      let car = {
+        brand: "Bmw",
+        model: 2020,
+        price: 35_000,
+      };
+      let motorcycle = car;
+      console.log(car);
+      console.log(motorcycle);
+
+      motorcycle.price = 10_000;
+      console.log(car);
+      console.log(motorcycle);
+
+      console.log("%c- Unreferenced -", "color: blue");
+      // Unreferenced
+      let phone = {
+        brand: "Apple",
+        model: "11 Pro",
+        price: 1499,
+      };
+
+      // without ES6:
+      //let computer = Object.assign({}, phone);
+
+      // with ES6:
+      let computer = { ...phone };
+      console.log(phone);
+      console.log(computer);
+
+      computer.price = 7999;
+      console.log(phone);
+      console.log(computer);
+
+      // -- OBJECTS in the OBJECTS --
+      console.log(
+        "%c- Objects in the Objects -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+
+      let person = {
+        name: "Tolga",
+        age: 29,
+        job: {
+          name: "Teacher",
+          salary: 2000,
+        },
+      };
+
+      // let person2 = { ...person };
+      // console.log(person);
+      // console.log(person2);
+
+      // person2.job.salary = 2500;
+      // console.log(person);
+      // console.log(person2);
+
+      // Solution:
+      let person2 = JSON.parse(JSON.stringify(person));
+      person2.job.salary = 2500;
+      console.log(person);
+      console.log(person2);
+
+      // -- OBJECTS in the ARRAYS --
+      console.log(
+        "%c- Objects in the Arrays -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+
+      let animals = [
+        {
+          type: "dog",
+          name: "Zeyna",
+        },
+        {
+          type: "cat",
+          name: "Boncuk",
+        },
+      ];
+
+      // let animals2 = [...animals];
+      // console.log(animals);
+      // console.log(animals2);
+
+      // animals2[1].name = "Pisi";
+      // console.log(animals);
+      // console.log(animals2);
+
+      // Solution:
+      let animals2 = animals.map((animal) => ({ ...animal }));
+      console.log(animals);
+      console.log(animals2);
+
+      animals2[1].name = "Pisi";
+      console.log(animals);
+      console.log(animals2);
+
+      // -- OBJECTS in the OBJECTS in the ARRAYS --
+      console.log(
+        "%c- Objects in the Objects in the Arrays -",
+        "background-color: #333; color: #fff; font-size: 20px; margin-top: 20px"
+      );
+      let security = [
+        {
+          type: "Police",
+          department: {
+            name: "Traffic",
+            salary: 3000,
+          },
+        },
+        {
+          type: "Military",
+          department: {
+            name: "Airforce",
+            salary: 4000,
+          },
+        },
+      ];
+
+      // let security_copy = security.map((object) => ({ ...object }));
+      // console.log(security);
+      // console.log(security_copy);
+
+      // security_copy[0].department.salary = 3500;
+      // console.log(security);
+      // console.log(security_copy);
+
+      // Solution:
+      let security_copy = JSON.parse(JSON.stringify(security));
+      console.log(security);
+      console.log(security_copy);
+
+      security_copy[0].department.salary = 3500;
+      console.log(security);
+      console.log(security_copy);
+    </script>
+  </body>
+</html>

@@ -12,9 +12,9 @@ view demos [here](https://bayirdan.github.io/javascript30/14-javascript-referenc
   cloneNames.push("Su");
 ```
 
-Array referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir değişiklik, orjinalinde de değişiklikle sonuçlanır.
+array referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir değişiklik, orjinalinde de değişiklikle sonuçlanır.
 
-Çözüm, referanssız kopyalama.
+çözüm, referanssız kopyalama.
 
 #### without ES6
 
@@ -47,9 +47,9 @@ Array referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir değ
   computer.price = 7999;
 ```
 
-Object referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir değişiklik, orjinalinde de değişiklikle sonuçlanır.
+object referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir değişiklik, orjinalinde de değişiklikle sonuçlanır.
 
-Çözüm, referanssız kopyalama.
+çözüm, referanssız kopyalama.
 
 #### without ES6
 
@@ -83,9 +83,9 @@ Object referanslı bir şekilde kopyalanırsa, kopyada yapılan herhangi bir de�
   let person_copy = {...person};
 ```
 
-Object referanssız bir şekilde kopyalansa da, person içindeki job içinde bir değişiklik olursa, orjinal object içindeki job da değişmiş olur.
+object referanssız bir şekilde kopyalansa da, person içindeki job içinde bir değişiklik olursa, orjinal object içindeki job da değişmiş olur.
 
-Çözüm, JSON.stringify() ile object'in string'e dönüştürülüp, tekrardan JSON.parse() ile object'e dönüştürülmesi.
+çözüm, JSON.stringify() ile object'in string'e dönüştürülüp, tekrardan JSON.parse() ile object'e dönüştürülmesi.
 
 ```
   let person_copy = JSON.parse(JSON.stringify(person));
@@ -112,9 +112,9 @@ Object referanssız bir şekilde kopyalansa da, person içindeki job içinde bir
 let pets2 = [...animals];
 ```
 
-Array, referanssız bir şekilde kopyalansa da, pets içindeki object'lerde bir değişiklik olursa, orjinal array içindeki object'lerde de değişiklik olur.
+array, referanssız bir şekilde kopyalansa da, pets içindeki object'lerde bir değişiklik olursa, orjinal array içindeki object'lerde de değişiklik olur.
 
-Çözüm, array.map() fonksiyonu.
+çözüm, array.map() fonksiyonu.
 
 ```
 let pets2 = pets.map((pet) => ({...pet}));
@@ -147,9 +147,9 @@ let pets2 = pets.map((pet) => ({...pet}));
 let security_clone = security.map((object) => ({...object}));
 ```
 
-Array içindeki object içindeki object üzerinde bir değişiklik yapıldığında, orjinal array içindeki object içindeki object üzerinde de değişiklik olur.
+array içindeki object içindeki object üzerinde bir değişiklik yapıldığında, orjinal array içindeki object içindeki object üzerinde de değişiklik olur.
 
-Çözüm, yine JSON.parse(JSON.stringify())
+çözüm, yine JSON.parse(JSON.stringify())
 
 ```
 let security_clone = JSON.parse(JSON.stringify(security));

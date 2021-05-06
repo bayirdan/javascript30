@@ -1,6 +1,6 @@
 # 18- How Javascript's Array Reduce Works
 
-view demos [here](https://bayirdan.github.io/javascript30/18-how-javaScript's-array-reduce-works/index.html)
+view demos [here](https://bayirdan.github.io/javascript30/18-how-javascript-array-reduce-works/index.html)
 
 ---
 

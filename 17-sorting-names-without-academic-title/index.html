@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Name without Academic Title</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: rosybrown;
+      }
+
+      ul {
+        padding: 30px;
+        list-style-type: none;
+        background-color: #fff;
+        box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+
+      li {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+    </style>
+
+    <ul id="names"></ul>
+
+    <script>
+      const names = [
+        "Uz. Berke Serbes",
+        "Yrd. Doc. Alp Bilen",
+        "Uz. Selin Yerebakmaz",
+        "Doc. Melisa Durmaz",
+        "Prof. Yasin Conta",
+        "Prof. Dr. Bilal Sen",
+        "Prof. Alpcan Sakin",
+        "Ebru Polen",
+        "Prof. Dr. Haham Brunson",
+        "Ord. Prof. Dr. Bati Yaranki",
+      ];
+
+      function strip(name) {
+        return name
+          .replace(/(uz. |yrd. |doc. |prof. |dr. |ord. )/gi, "")
+          .trim();
+      }
+
+      const sortedNames = names.sort((a, b) => (strip(a) > strip(b) ? 1 : -1));
+
+      document.querySelector("#names").innerHTML = sortedNames
+        .map((name) => `<li> ${name} </li>`)
+        .join("");
+    </script>
+  </body>
+</html>

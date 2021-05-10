@@ -66,3 +66,15 @@ p {
   border-radius: 1rem;
   transition: all 0.4s;
 }
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 7px;
+  }
+}

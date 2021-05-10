@@ -11,12 +11,13 @@ html {
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #f5eadb;
 }
 
 a {
   text-decoration: none;
   color: #333;
+  font-size: 1.8rem;
 }
 
 .container {
@@ -24,17 +25,22 @@ a {
   margin: 10rem auto;
 }
 
-.menu {
+.navbar {
+  display: block;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.menu a {
-  background-color: #f0e3d3;
+.navbar li a {
   padding: 0.1rem 1rem;
   border-radius: 1rem;
-  font-size: 1.8rem;
+  border-bottom: 1px dotted #ccc;
 }
 
 .lorem {
@@ -55,9 +61,8 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  background: #333;
-  color: #fff;
+  background-color: #cfc4b6;
   z-index: -1;
-  border-radius: 2rem;
-  transition: all 0.2s;
+  border-radius: 1rem;
+  transition: all 0.4s;
 }

@@ -8,6 +8,28 @@
     <title>Text to Speech</title>
   </head>
   <body>
+    <div class="container">
+      <h1 class="box">The <span>Voiceinator</span></h1>
+
+      <select name="voice" id="voices">
+        <option value="">Select A Voice</option>
+      </select>
+
+      <label for="rate">Rate</label>
+      <input type="range" name="rate" min="0" max="3" value="1" step="0.1" />
+
+      <label for="pitch">Pitch</label>
+      <input type="range" name="pitch" min="0" max="2" step="0.1" />
+
+      <textarea name="text" cols="50" rows="10">
+Hello! This is Spartaaa!!!</textarea
+      >
+
+      <div class="buttons">
+        <button id="stop">Stop</button>
+        <button id="speak">Speak</button>
+      </div>
+    </div>
     <script src="assets/script/script.js"></script>
   </body>
 </html>

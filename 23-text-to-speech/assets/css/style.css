@@ -21,11 +21,11 @@ body {
 
 .container {
   width: 50rem;
-  margin: auto;
+  margin: 2rem auto;
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -79,4 +79,16 @@ button:hover {
   color: #fff;
   background-color: #333;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 8px;
+  }
 }

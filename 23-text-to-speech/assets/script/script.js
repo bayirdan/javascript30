@@ -11,7 +11,6 @@ message.text = document.querySelector('[name="text"]').value;
 function populateVoices() {
   voices = this.getVoices();
   voicesDropdown.innerHTML = voices
-    .filter((voice) => voice.lang.includes("en"))
     .map(
       (voice) =>
         `<option value="${voice.name}">${voice.name} - (${voice.lang})</option>`
@@ -32,7 +31,6 @@ function toggle(startOver = true) {
 }
 
 function setOption() {
-  console.log(this);
   message[this.name] = this.value;
   toggle();
 }

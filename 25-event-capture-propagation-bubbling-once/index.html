@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Capture, Propagation, Bubbling, Once</title>
+  </head>
+  <body>
+    <div class="one">
+      <div class="two">
+        <div class="three"></div>
+      </div>
+    </div>
+    <button>Click Me</button>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 40px;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      div {
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        margin: auto;
+        border-radius: 0.1rem;
+        box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+      }
+
+      .one {
+        background-color: lightpink;
+        position: relative;
+      }
+      .one::before {
+        content: "one";
+        color: #976970;
+        position: absolute;
+        top: 0;
+        left: 0.3rem;
+      }
+
+      .two {
+        background-color: lightyellow;
+        position: relative;
+      }
+      .two::before {
+        content: "two";
+        color: #8d8d7a;
+        position: absolute;
+        top: 0;
+        left: 0.3rem;
+      }
+
+      .three {
+        background-color: lightblue;
+        position: relative;
+      }
+      .three::before {
+        content: "three";
+        color: #607981;
+        position: absolute;
+        top: 0;
+        left: 0.3rem;
+      }
+
+      button {
+        padding: 0.3rem 1rem;
+        font-size: 0.4rem;
+        margin-top: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.1rem;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      button:hover {
+        background-color: #f9f9f9;
+      }
+
+      @media (max-width: 1440px) {
+        html {
+          font-size: 30px;
+        }
+      }
+    </style>
+    <script>
+      const divs = document.querySelectorAll("div");
+      const button = document.querySelector("button");
+
+      function logText(e) {
+        e.stopPropagation();
+        console.log(this.classList.value);
+      }
+
+      divs.forEach((div) =>
+        div.addEventListener("click", logText, {
+          capture: false,
+        })
+      );
+
+      button.addEventListener(
+        "click",
+        () => {
+          console.log("clicked");
+        },
+        {
+          once: true,
+        }
+      );
+    </script>
+  </body>
+</html>

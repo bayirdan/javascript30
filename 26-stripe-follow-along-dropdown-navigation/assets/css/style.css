@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+    180deg,
+    rgb(240, 210, 210),
+    rgba(243, 171, 171)
+  );
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: lightblue;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 0 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  margin: auto;
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar > ul {
+  display: flex;
+  justify-content: center;
+}
+
+.menu > li {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.menu > li > a {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.dropdown {
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  padding: 1rem;
+  transition: all 0.3s;
+  transform: translateY(10rem);
+  will-change: transform;
+  top: -5rem;
+  display: none;
+}
+
+.trigger-enter .dropdown {
+  display: block;
+}
+
+.trigger-enter-active .dropdown {
+  opacity: 1;
+}
+
+.bio {
+  min-width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+.bio img {
+  float: right;
+  width: 4rem;
+}
+
+.useful {
+  min-width: 10rem;
+}
+
+.useful > li {
+  display: block;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+a.button {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.3rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.arrow {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  background: #fff;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.dropdownBackground {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+  transition: all 0.3s, opacity 0.1s, translate 0.2s;
+  transform-origin: 50% 0%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+.dropdownBackground.open {
+  opacity: 1;
+}
+
+.button[href*="facebook"] {
+  background: #3b5998;
+}
+.button[href*="twitter"] {
+  background: #019fe9;
+}
+.button[href*="github"] {
+  background: #333;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  html {
+    font-size: 14px;
+  }
+}

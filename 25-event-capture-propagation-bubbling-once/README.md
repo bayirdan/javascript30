@@ -1,4 +1,4 @@
-# 24- Event Capture, Propagation, Bubbling, Once
+# 25- Event Capture, Propagation, Bubbling, Once
 
 view demos [here](https://bayirdan.github.io/javascript30/25-event-capture-propagation-bubbling-once/index.html)
 

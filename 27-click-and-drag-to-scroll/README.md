@@ -56,4 +56,4 @@ slider.addEventListener("mouseup", () => {
 });
 ```
 
-mouse tıklanması bırakıldığında veya mouse alandan ayrıldığında, tıklanma durumu false yapıldı ve css class'ımız silindi.
+mouse tıklanması bırakıldığında veya mouse alandan ayrıldığında, tıklanma durumu false yapıldı ve css class'ı silindi.

@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 99, 71, 0.753);
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 0.3rem rgba(0, 0, 0, 0.2);
+  border: 5px solid #ccc;
+  margin: 0.5rem;
+  padding-top: 3rem;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  transition: all 0.2s;
+  transform: scale(0.99);
+  will-change: transform;
+  font-size: 0;
+  perspective: 750px;
+}
+
+.item {
+  width: 10rem;
+  height: calc(100% - 3rem);
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  letter-spacing: 5px;
+  color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 0.5rem rgba(0, 0, 0, 0.1) inset;
+}
+
+.items.active {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.item:nth-child(even) {
+  transform: scaleX(1.31) rotateY(40deg);
+}
+.item:nth-child(odd) {
+  transform: scaleX(1.31) rotateY(-40deg);
+}
+
+.item:nth-child(9n + 1) {
+  background: hsl(5, 50%, 50%);
+}
+.item:nth-child(9n + 2) {
+  background: hsl(35, 74%, 49%);
+}
+.item:nth-child(9n + 3) {
+  background: hsl(65, 50%, 50%);
+}
+.item:nth-child(9n + 4) {
+  background: hsl(95, 50%, 50%);
+}
+.item:nth-child(9n + 5) {
+  background: hsl(125, 50%, 50%);
+}
+.item:nth-child(9n + 6) {
+  background: hsl(155, 50%, 50%);
+}
+.item:nth-child(9n + 7) {
+  background: hsl(185, 50%, 50%);
+}
+.item:nth-child(9n + 8) {
+  background: hsl(215, 50%, 50%);
+}
+.item:nth-child(9n + 9) {
+  background: hsl(245, 50%, 50%);
+}

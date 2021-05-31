@@ -10,6 +10,7 @@ projenin amacı; random sürede, random bir yerde çıkan köstebekleri tıklaya
 const scoreBoard = document.querySelector(".score");
 const holes = document.querySelectorAll(".hole");
 const moles = document.querySelectorAll(".mole");
+const button = document.querySelector(".button");
 
 let score = 0;
 let lastHole;
@@ -77,11 +78,17 @@ function bonk(e) {
 function startGame() {
   scoreBoard.textContent = `Score: 0`;
   timeUp = false;
+  button.disabled = true;
   score = 0;
   peep();
 
-  setTimeout(() => (timeUp = true), 30000);
+  setTimeout(() => {
+    timeUp = true;
+    button.disabled = false;
+  }, 15000);
 }
 ```
 
 - `startGame()` fonksiyon ile, belirlenen sürede oyun başlatıldı.
+
+- `button.disabled = true` ile oyun içinde oyun başlatma engellendi.

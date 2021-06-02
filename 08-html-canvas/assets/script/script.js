@@ -31,7 +31,6 @@ function changeValue() {
   else {
     ctx.strokeStyle = this.value;
   }
-  console.log(this);
 }
 
 canvas.addEventListener("mousedown", (e) => {

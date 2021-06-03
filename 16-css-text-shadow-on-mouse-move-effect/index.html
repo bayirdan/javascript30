@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <title>Css Text Shadow on Mouse Effect</title>
   </head>
   <body>
@@ -36,9 +37,6 @@
       const text = hero.querySelector("h1");
       const walk = 30;
 
-      console.log(hero.offsetWidth);
-      console.log(hero.offsetHeight);
-
       function shadow(e) {
         // const width = hero.offsetWidth;
         // const height = hero.offsetHeight;
@@ -47,9 +45,6 @@
 
         const { offsetWidth: width, offsetHeight: height } = hero; // ES6 syntax
         let { offsetX: x, offsetY: y } = e; // ES6 syntax
-
-        console.log(x);
-        console.log(y);
 
         if (this !== e.target) {
           x = x + e.target.offsetLeft;

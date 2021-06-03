@@ -4,7 +4,7 @@ view demos [here](https://bayirdan.github.io/javascript30/23-text-to-speech/inde
 
 ---
 
-projenin amacı; Web Speech API'si kullanılarak, yazıyı sese çevirmek. Kullanılan ana yapı `SpeechSynthesisUtterance`
+projenin özeti: Web Speech API'si kullanılarak, yazıyı sese çevirmek. Kullanılan ana yapı `SpeechSynthesisUtterance`
 
 ```
 const message = new SpeechSynthesisUtterance();

@@ -4,7 +4,7 @@ view demos [here](https://bayirdan.github.io/javascript30/07-array-cardio-2/inde
 
 ---
 
-bu projede sık sık tercih edilen, bazı önemli array metodları kullanıldı.
+bu projede, sık sık tercih edilen, bazı önemli array metodları kullanıldı.
 
 ```
 const belowMinWage = employees.some((employee) => {

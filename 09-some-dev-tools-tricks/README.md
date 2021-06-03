@@ -4,7 +4,7 @@ view demos [here](https://bayirdan.github.io/javascript30/09-some-dev-tools-tric
 
 ---
 
-bu projede; bazı console yardımcı elementleri kullanıldı.
+bu projede, bazı console yardımcı elementleri kullanıldı.
 
 ```
 console.log("Hello i am a %s", "engineer");

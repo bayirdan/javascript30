@@ -4,7 +4,7 @@ view demos [here](https://bayirdan.github.io/javascript30/22-follow-along-links/
 
 ---
 
-projenin amacı, her linke `mouseenter` eventListener'i gerçekleştiğinde, yeni bir class eklenmesinden ziyade, eklenen class'ın bir önceki konumundan yeni konumuna translate olması.
+projenin özeti: her linke `mouseenter` eventListener'i gerçekleştiğinde, yeni bir class eklenmesinden ziyade, eklenen class'ın bir önceki konumundan yeni konumuna translate olması.
 
 eklenen class, her bir linkin bulunduğu konum, yükseklik ve genişliğine bağlı olarak boyut alır.
 

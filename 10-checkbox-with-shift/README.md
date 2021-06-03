@@ -4,7 +4,7 @@ view demos [here](https://bayirdan.github.io/javascript30/10-checkbox-with-shift
 
 ---
 
-projenin amacı; checkbox'larda seçim yaparken, shift tuşu kullanıldığında, son seçim yapılan checkbox ile bir önceki seçilen checkbox arasında başka checkboxlar varsa, onları da seçmek ya da seçimini kaldırmak.
+projenin özeti: checkbox'larda seçim yaparken, shift tuşu kullanıldığında, son seçim yapılan checkbox ile bir önceki seçilen checkbox arasında başka checkboxlar varsa, onları da seçmek ya da seçimini kaldırmak.
 
 ```
 const checkboxes = [
